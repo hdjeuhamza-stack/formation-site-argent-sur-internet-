@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gagner Gros sur Internet - Formation</title>
+
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAKnMmBWD4BVM2Rr-cdXxnq4ibY4-dj2nnKWJIOherDVXkWqfQcmltdZ3lagUTryqm-0Mjq-Z1nMPT7qw&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 3rem;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1rem;
+    }
+    #download-link {
+      margin-top: 2rem;
+      display: none;
+      font-size: 1.2rem;
+      background-color: #10b981;
+      padding: 1rem 2rem;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gagner Gros sur Internet Rapidement</h1>
+  <p>Guide Pratique pour Générer des Revenus Massifs en Ligne</p>
+
+  <!-- PayPal Button container -->
+  <div id="paypal-container-M3T72ZLFCQHJS"></div>
+
+  <!-- Download link - hidden initially -->
+  <a id="download-link" href="https://raw.githubusercontent.com/your-username/your-repo/main/files/guide-gagner-gros.docx" download>
+    Télécharger le guide complet (format Word)
+  </a>
+
+  <script>
+    paypal.HostedButtons({
+      hostedButtonId: "M3T72ZLFCQHJS",
+
+      onApprove: function(data, actions) {
+        // Payment successful: show the download link
+        document.getElementById("download-link").style.display = "inline-block";
+        alert("Merci pour votre achat ! Vous pouvez maintenant télécharger le guide complet.");
+      },
+
+      onError: function(err) {
+        alert("Une erreur est survenue avec le paiement. Veuillez réessayer.");
+        console.error(err);
+      }
+    }).render("#paypal-container-M3T72ZLFCQHJS");
+  </script>
+</body>
+</html>
